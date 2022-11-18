@@ -21,11 +21,11 @@ app.use(bodyParser.json());
 app.set('socketio', io);
 app.set('server', server);
 
-server.listen(3333, (err) => {
+server.listen(process.env.PORT ?? 3333, (err) => {
     if (err) {
         console.log(err);
     } else {
-        console.log(`listening on port 5000`);
+        console.log(`listening on port ${process.env.PORT ?? 3333}`);
     }
 });
 
